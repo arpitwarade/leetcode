@@ -1,6 +1,5 @@
 class Solution {
     public boolean isPowerOfTwo(int n) {
-        // int max = Integer.MAX_VALUE;
         int count =1;
         int max = n/2;
         if( n<=0){
