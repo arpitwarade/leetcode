@@ -19,11 +19,9 @@ class Solution {
         int i = 0;
         int j = n-1;
         int []arr = new int[2]; 
-        for(int k = 0; k<n; k++){
+        while(i<j){
             if((numbers[i]+numbers[j]) == target){
-                arr[0] = i+1;
-                arr[1] = j+1;
-                return arr;
+            return new int[]{i + 1, j + 1};
             }
             else if((numbers[i]+numbers[j]) > target){
                 j--;
@@ -31,11 +29,8 @@ class Solution {
             else if((numbers[i]+numbers[j])<target ){
                 i++;
             }
-        // if(i>j || i == j){
-        // }
-
         }
-        return arr;
+         return new int[]{-1, -1};
 
     }
 }
