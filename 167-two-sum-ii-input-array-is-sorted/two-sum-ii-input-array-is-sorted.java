@@ -18,7 +18,6 @@ class Solution {
         int n = numbers.length;
         int i = 0;
         int j = n-1;
-        int []arr = new int[2]; 
         while(i<j){
             int sum = numbers[i]+numbers[j];
             if(sum == target){
