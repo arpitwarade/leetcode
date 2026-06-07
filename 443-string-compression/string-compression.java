@@ -1,8 +1,10 @@
 class Solution {
     public int compress(char[] chars) {
         if (chars.length == 1) return 1;
+
         int i = 0;
         int j = 0;
+
         while (i < chars.length) {
             char ch = chars[i];
             int count = 0;
@@ -11,6 +13,7 @@ class Solution {
                 count++;
                 i++;
             }
+
             chars[j++] = ch;
 
             if (count > 1) {
@@ -21,6 +24,7 @@ class Solution {
                 }
             }
         }
+
         return j;
     }
 }
