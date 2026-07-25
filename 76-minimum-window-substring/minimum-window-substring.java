@@ -39,6 +39,6 @@ class Solution {
             }
 
          }
-            return res == Integer.MAX_VALUE ? "" : s.substring(start, start + res);
+           return res == Integer.MAX_VALUE ? "" : s.substring(start, start + res);
     }
 }
