@@ -47,28 +47,72 @@
 //     }  
 // }
 
+// class Solution{
+//     public int[] searchRange(int[] nums, int target){
+//         int arr[] = {-1,-1};
+//         if(nums.length == 1 && nums[0] == target){
+//             arr[0] = 0;
+//             arr[1] = 0;
+//             return arr;
+//         }
+//         for(int i =0; i<nums.length; i++){
+//            if(nums[i] == target){
+//             if(arr[0] == -1){
+//                 arr[0] = i;
+//             }
+//             else{
+//                 arr[1] = i;
+//            }
+//         }
+//     }
+//     if(arr[1] == -1 && arr[0] >-1){
+//         arr[1] = arr[0];
+//         return arr;
+//     }
+//     return arr;
+// }
+// }
 class Solution{
     public int[] searchRange(int[] nums, int target){
-        int arr[] = {-1,-1};
-        if(nums.length == 1 && nums[0] == target){
-            arr[0] = 0;
-            arr[1] = 0;
-            return arr;
-        }
-        for(int i =0; i<nums.length; i++){
-           if(nums[i] == target){
-            if(arr[0] == -1){
-                arr[0] = i;
+        int fOcc = -1;
+        int lOcc = -1;
+        int []arr =new int[2];
+
+        int low = 0;
+        int high = nums.length-1;
+        while(low<= high){
+            int mid = (low+high)/2;
+            if(nums[mid] > target){
+                high = mid-1;
+            }
+            else if(nums[mid] < target){
+                low = mid+1;
             }
             else{
-                arr[1] = i;
-           }
+                fOcc = mid;
+                high = mid-1;
+            }
         }
-    }
-    if(arr[1] == -1 && arr[0] >-1){
-        arr[1] = arr[0];
+
+        low = 0;
+        high = nums.length-1;
+        while(low<= high){
+            int mid = (low+high)/2;
+            if(nums[mid] > target){
+                high = mid-1;
+            }
+            else if(nums[mid] < target){
+                low = mid+1;
+            }
+            else{
+                lOcc = mid;
+                low = mid+1;
+            }
+        }
+        arr[0] = fOcc;
+        arr[1] = lOcc;
+
         return arr;
-    }
-    return arr;
+
 }
 }
