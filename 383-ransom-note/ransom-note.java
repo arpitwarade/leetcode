@@ -1,6 +1,5 @@
 class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
-        // Map<Character, Integer> rNote = new HashMap<>();
         Map<Character, Integer> mNote = new HashMap<>();
 
         int r = ransomNote.length();
