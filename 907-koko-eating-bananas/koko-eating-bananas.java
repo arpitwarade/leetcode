@@ -15,7 +15,10 @@ class Solution {
         int n = piles.length;
         Arrays.sort(piles);
         int low =1;
-        int high = piles[n-1];
+        int high = 0;
+        for(int pile : piles) {
+                  high = Math.max(high, pile);
+            }
 
         while(low <=  high){
             int mid = (high+low)/2;
