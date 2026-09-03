@@ -1,25 +1,33 @@
 class Solution {
     public boolean rotateString(String s, String goal) {
-        int n = s.length();
+        // int n = s.length();
 
-        if (n != goal.length()) {
+        // if (n != goal.length()) {
+        //     return false;
+        // }
+
+        // for (int start = 0; start < n; start++) {
+        //     int i = start;
+        //     int j = 0;
+
+        //     while (j < n && s.charAt(i % n) == goal.charAt(j)) {
+        //         i++;
+        //         j++;
+        //     }
+
+        //     if (j == n) {
+        //         return true;
+        //     }
+        // }
+
+        // return false;
+
+        if(s.length() != goal.length()){
             return false;
         }
 
-        for (int start = 0; start < n; start++) {
-            int i = start;
-            int j = 0;
+        String n = s+s;
 
-            while (j < n && s.charAt(i % n) == goal.charAt(j)) {
-                i++;
-                j++;
-            }
-
-            if (j == n) {
-                return true;
-            }
-        }
-
-        return false;
+        return n.contains(goal);
     }
 }
